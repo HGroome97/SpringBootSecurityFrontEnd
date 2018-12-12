@@ -32,13 +32,16 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
         registry.addViewController("/anonymous");
         registry.addViewController("/login");
-        registry.addViewController("/homepage");
-        registry.addViewController("/trainingmanager/adminpage");
-        registry.addViewController("/accessDenied");
-        registry.addViewController("/trainee/account");
-        registry.addViewController("/trainee/CV");
         registry.addViewController("/register");
-        registry.addViewController("/homepage");   
+        registry.addViewController("/homepage");
+       
+        registry.addViewController("/trainingmanager/adminpage");
+        registry.addViewController("/trainingmanager/trainees/edittrainees");
+   
+        registry.addViewController("/trainee/account");
+        registry.addViewController("/trainee/CV");    
+        
+        registry.addViewController("/accessDenied");
     }
     
     @Bean

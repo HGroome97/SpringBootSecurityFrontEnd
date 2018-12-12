@@ -6,7 +6,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <title>Admin CV</title>
+    <title>Edit Trainees</title>
 </head>
 
 <body>
@@ -54,7 +54,24 @@
       </ul>
     </div>
   </nav>
-    Admin Account options
+
+  <div class="container" style="margin: 50px;border: 1px solid green;">
+    <c:if test="${param.error ne null}">
+			<div style="color: red">Invalid credentials.</div>
+		</c:if>
+		<form onsubmit="return false;" method="post">
+			<div class="form-group">
+				<label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" name="username">
+			</div>
+			<div class="form-group">
+				<label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" name="password">
+			</div>
+
+			<button type="submit" class="btn btn-success"  onclick="register()">Submit</button>
+		</form>
+  </div>
 
 </body>
 </html>

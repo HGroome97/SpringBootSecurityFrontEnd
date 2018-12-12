@@ -63,7 +63,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="#">View</a>
                   <a class="dropdown-item" href="#">Add</a>
-                  <a class="dropdown-item" href="#">Amend</a>
+                  <a class="dropdown-item" href="/trainingmanager/trainees/edittrainees">Amend</a>
                 </div>
               </li>
             <li class="nav-item dropdown">
