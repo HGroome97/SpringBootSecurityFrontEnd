@@ -6,7 +6,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <title>Admin Account</title>
+    <title>Admin CV</title>
 </head>
 
 <body>
@@ -54,7 +54,7 @@
       </ul>
     </div>
   </nav>
-    Admin Account options
+    Admin view all trainers
 
 </body>
 </html>

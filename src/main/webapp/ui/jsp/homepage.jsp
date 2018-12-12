@@ -54,15 +54,15 @@
               <a class="nav-link" href="/trainingmanager/adminpage">My Account</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">CV's</a>
+              <a class="nav-link" href="/trainingmanager/CV">CV's</a>
             <li class="nav-item dropdown">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Trainees
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">View</a>
-                  <a class="dropdown-item" href="#">Add</a>
+                  <a class="dropdown-item" href="/trainingmanager/trainees/viewtrainees">View</a>
+                  <a class="dropdown-item" href="/trainingmanager/trainees/addtrainees">Add</a>
                   <a class="dropdown-item" href="/trainingmanager/trainees/edittrainees">Amend</a>
                 </div>
               </li>
@@ -71,9 +71,9 @@
                 Trainers
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">View</a>
-                <a class="dropdown-item" href="#">Add</a>
-                <a class="dropdown-item" href="#">Amend</a>
+                <a class="dropdown-item" href="/trainingmanager/trainers/viewtrainers">View</a>
+                <a class="dropdown-item" href="/trainingmanager/trainers/addtrainers">Add</a>
+                <a class="dropdown-item" href="/trainingmanager/trainers/edittrainers">Amend</a>
               </div>
             </li>
           </ul>
