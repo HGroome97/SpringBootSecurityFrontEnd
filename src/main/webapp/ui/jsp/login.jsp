@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="container" style="margin: 50px;border: 1px solid green;">
-		<h3>CV Management Login</h3>
+		<h3>CV Management System Login</h3>
 		<c:if test="${param.error ne null}">
 			<div style="color: red">Invalid credentials.</div>
 		</c:if>

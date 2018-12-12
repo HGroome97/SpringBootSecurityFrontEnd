@@ -87,6 +87,5 @@
         Admin homepage
         <br/>
     </security:authorize>
-
 </body>
 </html>

@@ -6,12 +6,12 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <title>Homepage</title>
+    <title>Register</title>
 </head>
 
 <body >
   <div class="container" style="margin: 50px;border: 1px solid green;">
-		<h3>CV Management Registration</h3>
+		<h3>CV Management System Registration</h3>
 		<c:if test="${param.error ne null}">
 			<div style="color: red">Invalid credentials.</div>
 		</c:if>
