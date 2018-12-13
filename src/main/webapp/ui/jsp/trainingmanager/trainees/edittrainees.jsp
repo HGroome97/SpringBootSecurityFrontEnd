@@ -6,7 +6,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <title>Admin Account</title>
+    <title>Edit Trainees</title>
 </head>
 
 <body>
@@ -54,7 +54,70 @@
       </ul>
     </div>
   </nav>
-    Admin Account options
+
+  <div class="container" style="margin: 50px;border: 1px solid green;">
+    <c:if test="">
+			<div style="color: red">Invalid credentials.</div>
+		</c:if>
+		<form onsubmit="return false;" method="post">
+			<div class="form-group">
+				<label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" name="username">
+			</div>
+			<div class="form-group">
+				<label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" name="password">
+			</div>
+      <div class="form-group">
+				<label for="enabled">Enabled:</label>
+        <select class="form-control" id="enabled" name="enabled">
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+			</div>
+      <div class="form-group">
+				<label for="role">Role:</label>
+        <select class="form-control" id="role" name="role">
+          <option value="ROLE_TRAINEE">Trainee</option>
+          <option value="ROLE_TRAINER">Trainer</option>
+          <option value="ROLE_TRAINING_MANAGER">Training Manager</option>
+        </select>
+			</div>
+
+			<button type="submit" class="btn btn-success"  onclick="update()">Submit</button>
+		</form>
+    <script>
+      update = function() {
+        var xhr = new XMLHttpRequest();
+        var url = "http://localhost:8081/users/updateUser";
+        xhr.open("PUT", url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          console.log(xhr.responseText);
+        }
+        };
+        var username = document.getElementById('username').value;
+        var pwd = document.getElementById('pwd').value;
+        var selectEn =  document.getElementById('enabled');
+        var enabled = selectEn.options[selectEn.selectedIndex].value;
+        var selectRole =  document.getElementById('role');
+        var role = selectRole.options[selectRole.selectedIndex].value;
+
+        var data = JSON.stringify({
+           "username":username,
+           "password":pwd,
+           "enabled":enabled,
+           "role": role
+        });
+        xhr.send(data);
+        document.getElementById('username').value="";
+        document.getElementById('pwd').value="";
+        alert("Successfully updated!")
+      }
+    </script>
+
+  </div>
 
 </body>
 </html>

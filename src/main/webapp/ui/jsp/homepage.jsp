@@ -39,6 +39,38 @@
         <br/> <br/>
     </security:authorize>
 
+    <security:authorize access="hasRole('ROLE_TRAINER')">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">CV Management</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/homepage">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/trainer/trainerpage">My Account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/trainer/CV">CVs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/trainer/viewtrainees">Trainees</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+              <a class="nav-link" href="<c:url value="/perform_logout" />">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+        Trainer homepage
+        <br/> <br/>
+    </security:authorize>
+
     <security:authorize access="hasRole('ROLE_TRAINING_MANAGER')">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">CV Management</a>
@@ -54,16 +86,16 @@
               <a class="nav-link" href="/trainingmanager/adminpage">My Account</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">CV's</a>
+              <a class="nav-link" href="/trainingmanager/CV">CVs</a>
             <li class="nav-item dropdown">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Trainees
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">View</a>
-                  <a class="dropdown-item" href="#">Add</a>
-                  <a class="dropdown-item" href="#">Amend</a>
+                  <a class="dropdown-item" href="/trainingmanager/trainees/viewtrainees">View</a>
+                  <a class="dropdown-item" href="/trainingmanager/trainees/addtrainees">Add</a>
+                  <a class="dropdown-item" href="/trainingmanager/trainees/edittrainees">Amend</a>
                 </div>
               </li>
             <li class="nav-item dropdown">
@@ -71,9 +103,9 @@
                 Trainers
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">View</a>
-                <a class="dropdown-item" href="#">Add</a>
-                <a class="dropdown-item" href="#">Amend</a>
+                <a class="dropdown-item" href="/trainingmanager/trainers/viewtrainers">View</a>
+                <a class="dropdown-item" href="/trainingmanager/trainers/addtrainers">Add</a>
+                <a class="dropdown-item" href="/trainingmanager/trainers/edittrainers">Amend</a>
               </div>
             </li>
           </ul>
@@ -87,6 +119,5 @@
         Admin homepage
         <br/>
     </security:authorize>
-
 </body>
 </html>

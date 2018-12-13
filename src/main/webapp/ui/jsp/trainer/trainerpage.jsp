@@ -21,30 +21,13 @@
           <a class="nav-link" href="/homepage">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/trainingmanager/adminpage">My Account</a>
+          <a class="nav-link" href="/trainer/trainerpage">My Account</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/trainingmanager/CV">CV's</a>
-        <li class="nav-item dropdown">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Trainees
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/trainingmanager/trainees/viewtrainees">View</a>
-              <a class="dropdown-item" href="/trainingmanager/trainees/addtrainees">Add</a>
-              <a class="dropdown-item" href="/trainingmanager/trainees/edittrainees">Amend</a>
-            </div>
-          </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Trainers
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/trainingmanager/trainers/viewtrainers">View</a>
-            <a class="dropdown-item" href="/trainingmanager/trainers/addtrainers">Add</a>
-            <a class="dropdown-item" href="/trainingmanager/trainers/edittrainers">Amend</a>
-          </div>
+          <a class="nav-link" href="/trainer/CV">CVs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/trainer/viewtrainees">Trainees</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -54,7 +37,7 @@
       </ul>
     </div>
   </nav>
-    Admin Account options
+    Trainer Account options
 
 </body>
 </html>

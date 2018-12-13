@@ -6,10 +6,10 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <title>Admin Account</title>
+    <title>Register</title>
 </head>
 
-<body>
+<body >
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">CV Management</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +54,49 @@
       </ul>
     </div>
   </nav>
-    Admin Account options
+    <div class="container" style="margin: 50px;border: 1px solid green;">
+		<c:if test="${param.error ne null}">
+			<div style="color: red">Invalid credentials.</div>
+		</c:if>
+		<form onsubmit="return false;" method="post">
+			<div class="form-group">
+				<label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" name="username">
+			</div>
+			<div class="form-group">
+				<label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" name="password">
+			</div>
+
+			<button type="submit" class="btn btn-success"  onclick="register()">Add</button>
+		</form>
+    <script>
+      register = function() {
+        var xhr = new XMLHttpRequest();
+        var url = "http://localhost:8081/users/createUser";
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          console.log(xhr.responseText);
+        }
+        };
+        var username = document.getElementById('username').value;
+        var pwd = document.getElementById('pwd').value;
+
+        var data = JSON.stringify({
+	         "username":username,
+	         "password":pwd,
+	         "enabled":true,
+	         "role":"ROLE_TRAINER"
+        });
+        xhr.send(data);
+        document.getElementById('username').value="";
+        document.getElementById('pwd').value="";
+        alert("Successfully added!")
+      }
+    </script>
+	</div>
 
 </body>
 </html>
