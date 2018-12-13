@@ -41,6 +41,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         .authorizeRequests()
         	.antMatchers("/register").permitAll()
         	.antMatchers("/trainingmanager/**").access("hasRole('ROLE_TRAINING_MANAGER')")
+        	.antMatchers("/trainer/**").access("hasRole('ROLE_TRAINER')")
         	.antMatchers("/anonymous*").anonymous()
         	//.antMatchers(HttpMethod.GET, "/index*", "/static/**", "/*.js", "/*.json", "/*.ico").permitAll()
         	.anyRequest().authenticated()
@@ -53,7 +54,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
         	.logout()
         	.logoutUrl("/perform_logout")
-        	.deleteCookies("JSESSIONID");
+        	.deleteCookies("JSESSIONID")
+        .and()
+    		.exceptionHandling()
+    		.accessDeniedPage("/accessDenied");
     }
 
 	@Override
